@@ -61,6 +61,9 @@ function next_number($number){
 	$number = $number+1;
 	return $number;
 }
+/**
+ * Convert multi dimentional arrays into select options
+ */
 function convert_options($results,$value,$label,$option='',$additonallabelinfo=''){
 	$options = '';
 	if($option != ''){
@@ -108,6 +111,9 @@ function convert_options_multi_selected($results,$value,$label,$option = "",$sel
 	}
 	return $options;
 }
+/**
+ * Decimal digit maintainer function used to maintain digits after deciaml point(.) this function helps to always maintain digits
+ */
 function decimal_digit_maintainer($value){
 	 define("AFTER_DESIMAL_DIGITS ",2);
 	$value_array = explode('.',$value);
@@ -118,6 +124,9 @@ function decimal_digit_maintainer($value){
 	}
 	return implode('.',$value_array);
 }
+/**
+ * Convert nunmbers into words(amount)
+ */
 function convert_number_to_words($number) {
 	$no = round($number);
 	$point = round($number - $no, 2) * 100;
@@ -185,11 +194,17 @@ function convert_number_to_words($number) {
 	$words[$point = $point % 10] : '';
 	return $result . "Rupees  ";
 }
+/**
+ * this function used to reduct if condition in checbox
+ */
 function check_checked($current,$selected){
 	if($current == $selected){
 		echo "checked";
 	}
 }
+/**
+ * this function used to calculate gst rate 
+ */
 function gst_percentage($percentage = 5 , $price = 1, $quantity = 1, $tax_type = 1 ){
 	$taxs = array(
 		array(
